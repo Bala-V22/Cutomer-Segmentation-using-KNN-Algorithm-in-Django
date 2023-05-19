@@ -1,0 +1,131 @@
+{% extends "html/main/lay.html" %}
+{% load static %}
+{% block content %}
+
+<h1>Bala and Rohith</h1>
+
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'products/asus banner.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'products/iphone 14 banner.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'products/sony banner.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<div class="boat">
+  <div class="exclusives">
+    <img src="{% static 'products/asus ex.jpg' %}" alt="" class="offer">
+  <div class="words" style="color: antiquewhite;">
+    <p>Exclusive offer Now going</p>
+    <h1>ROG Zephyrus Duo 16</h1>
+    <h4><b>*3,96,990</b></h4> <small> truke Buds Q1 Bluetooth Truly Wireless in Ear Earbuds with mic, 60H Playtime and Fast Charge,<br> Environmental Noise Cancellation(ENC), AAC Codec, Dedicated Gaming Mode, BT 5.1 </small>
+  </div>
+  </div>
+</div>
+
+<div class="dis">
+  <div class="show" style="height: 350px;">
+      <img src="{% static 'products/asus.jpg' %}" alt="">
+      <h4>ROG Zephyrus Duo 16</h4>
+      <p class="prize"><s> ₹4,73,990</s> &nbsp; <b style="color: green;">₹3,96,990</b></p>
+  </div>
+  
+  <div class="show" style="height: 350px;">
+      <img src="{% static 'products/mac.jpg' %}" alt="">
+      <h4>Apple MacBook Pro</h4>
+      <p class="prize"><s> ₹155,900</s> &nbsp; <b style="color: green;">₹149,900</b></p>
+  </div>
+  
+  <div class="show" style="height: 350px;">
+      <img src="{% static 'products/samsung book.jpg' %}" alt="">
+      <h4>Acer Predator Helios</h4>
+      <p class="prize"> <s> ₹1,79,999</s> &nbsp; <b style="color: green;">₹1,27,990</b></p>
+  </div>
+  </div>
+
+  <div class="boat">
+    <div class="exclusive">
+      <img src="{% static 'products/iphone 14 ex.png' %}" alt="" class="offer">
+    <div class="words">
+      <p>Exclusive offer Now going</p>
+      <h1>iPhone 14 Pro Max</h1>
+      <h4><b>*₹149,900</b> </h4><small>  6Gb Ram 128 Gb Internal Storage </small>
+    </div>
+    </div>
+  </div>
+    
+  <div class="dis">
+  <div class="show" style="height: 375px;">
+      <img src="{% static 'products/apple 1.jpg' %}" alt="">
+      <h4>iPhone 14 Pro Max</h4>
+      <p class="prize"><s> ₹159,900</s> &nbsp; <b style="color: green;">₹149,900</b></p>
+  </div>
+  
+  <div class="show" style="height: 375px;">
+      <img src="{% static 'products/samsung.jpg' %}" alt="">
+      <h4>Samsung Galaxy Z</h4>
+      <p class="prize"><s> ₹1,77,999</s> &nbsp; <b style="color: green;">₹1,54,999</b></p>
+  </div>
+  
+  <div class="show" style="height: 375px;">
+      <img src="{% static 'products/apple 2.jpg' %}" alt="">
+      <h4>iPhone 14 Plus</h4>
+      <p class="prize"> <s> ₹93,900</s> &nbsp; <b style="color: green;">₹89,900</b></p>
+  </div>
+  </div>
+  
+
+  <div class="boat">
+    <div class="exclusive">
+      <img src="{% static 'products/sony ex.png' %}" alt="" class="offer">
+    <div class="word" style="color: black;">
+      <p><b> Exclusive offer Now going</b></p>
+      <h1>SONY UHD</h1>
+      <h4><b>*98,850</b></h4><small></small>  Bluetooth Calling
+        Answer & make calls with bluetooth. Make & receive phone calls <br>directly from your watch, anywhere and anytime. </small>
+    </div>
+    </div>
+  </div>
+    
+  <div class="dis">
+    <div class="show" style="height: 350px;">
+        <img src="{% static 'products/sony.jpg' %}" alt="">
+        <h4>SONY UHD</h4>
+        <p class="prize"><s> ₹110,900</s> &nbsp; <b style="color: green;">₹98,850</b></p>
+    </div>
+    
+    <div class="show" style="height: 350px;">
+        <img src="{% static 'products/mar.jpg' %}" alt="">
+        <h4>MarQ</h4>
+        <p class="prize"><s> ₹50,599</s> &nbsp;  <b style="color: green;">₹44,590</b></p>
+    </div>
+    
+    <div class="show" style="height: 350px;">
+        <img src="{% static 'products/fridg.jpg' %}" alt="">
+        <h4>AmazonBasics Frost</h4>
+        <p class="prize"> <s> ₹74,999</s> &nbsp; <b style="color: green;">₹47,990</b></p>
+    </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*This is for login and register page code */
+
+body,html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+}
+.Section_top{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-image: url(/static/products/background/image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    animation: change 10s infinite ease-in-out;
+}
+
+@keyframes change{
+    0%
+    {
+        background-image: url(/static/products/background/img1.jpg);
+    }
+    20%
+    {
+        background-image: url(/static/products/background/img2.jpg);
+    }
+    40%
+    {
+        background-image: url(/static/products/background/image.jpg);
+    }
+    60%
+    {
+        background-image: url(/static/products/background/img4.jpg);
+    }
+    80%
+    {
+        background-image: url(/static/products/background/img5.jpg);
+    }
+    100%
+    {
+        background-image: url(/static/products/background/img1.jpg);
+    }
+}
+
+.content{
+    width: 350px;
+    height: 550px;
+    background-color: rgb(72, 219, 251,0.5);
+    position: relative;
+    margin: 6% auto;
+    padding: 5px;
+    transition: .5s;
+    overflow: hidden;
+    border-radius: 20px;
+
+}
+
+.button{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+
+.toggle{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    color: white;
+    font-size: large;
+    
+}
+
+#btns{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 120px;
+    height: 100%;
+    background: linear-gradient(to right,#ff105f,#ffad06);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.group{
+    top: 120px;
+    position: absolute;
+    width: 280px;
+    transition: 0.5s;
+    margin-left: 7%;
+}
+
+.input{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: 0;
+    border-bottom: 2px solid rgb(58, 58, 58);
+    outline: none;
+    background: transparent;
+}
+
+.input::placeholder { 
+  color: rgb(0, 0, 0);
+  opacity: 1; 
+}
+.submit{
+    width: 100px;
+    padding: 20px 20px;
+    cursor: pointer;
+    display: block;
+    background: linear-gradient(to right, #ff105f,#ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: aliceblue;
+    position: absolute;
+    bottom: -50%;
+    right: 30%;
+}
+
+.submit1{
+    width: 100px;
+    padding: 20px 20px;
+    cursor: pointer;
+    background: linear-gradient(to right, #ff105f,#ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: aliceblue;
+    position: absolute;
+    bottom: -75%;
+    right: 40%;
+
+}
+
+.check{
+    position: absolute;
+    left: 5%;
+    bottom: -14%;  
+}
+
+span{
+    color: rgb(7, 7, 7);
+    font-size: 12px;
+    position: absolute;
+    left: 15%;
+    bottom: -13%;  
+}
+
+#reg{
+    left: 20px;
+}
+
+#log{
+    left: 450px;
+}
+
+.overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 300px;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            transition: opacity 500ms;
+            visibility: visible;
+            opacity: 1;
+          }
+          .overlay:target {
+            visibility: hidden;
+            opacity: 0;
+            display:none
+          }
+          .popup { position: relative;
+            margin: 70px auto;
+            padding: 20px;
+            background: rgb(255, 255, 255,0.9);
+            border-radius: 5px;
+            width: 300px;
+            left: 100px;
+            border-radius: 10px;
+            transition: all 5s ease-in-out;
+
+        }
+     
+.popup .close       { position: absolute; top: 20px; right: 30px; transition: all 200ms;
+                      font-size: 30px; font-weight: bold; text-decoration: none; color: #333; }
+.popup .close:hover { color: orange; }
+.popup .content     { max-height: 30%; overflow: auto; }
+
+
+
+    </style>
+</head>
+
+<body>
+   <div class="Section_top">
+    <div class="main">
+        <div class="content">
+            <div class="button">
+                <div id="btns"></div>
+                <button type="button" class="toggle" onclick="reg()">Register</button>
+                <button type="button" class="toggle" onclick="log()">log</button>                
+            </div> 
+            <form id="reg" action="/login" class="group" method="POST">
+                {% csrf_token %}
+                <input type="text" class="input" placeholder="Enter your Name" name="name" required>
+                <input type="text" class="input" placeholder="Enter Gmail name" name="email" required>
+                <input type="text" class="input" placeholder="Enter Age" name="age" required>
+                <select id="country" class="input" name="gender" >
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                <input type="text" class="input" placeholder="Enter Income" name="income" required>
+                <input type="text" class="input" placeholder="Create a Password" name="password" required>
+                <input type="checkbox" class="check "><span>Agree Terms & Condition</span>
+                <button type="submit" class="submit"><b>Sign in!</b></button>
+                
+            </form>  
+            <form id="log" action="/done" class="group" method="POST">
+                {% csrf_token %}
+
+                <input type="text" class="input" placeholder="Name"  name="name" required>
+                <input type="text" class="input" placeholder="Password" name="password" required>
+                <button type="submit" class="submit1"><b>Log in!</b></button>
+            </form>          
+        </div>
+    </div>
+   </div> 
+   <form id="reg" action="/login" class="group" method="POST">
+
+   {% if name %}
+                <!-- <div class="alert">
+                    <div class="message">
+                        <p><h3>{{name}}</h3> Your Register Successfully <br> Now you can Login!!</p>
+                    </div>
+                </div> -->
+                <div id="popup1" class="overlay">
+                    <div class="popup" >
+                        <h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{name}}</h2>
+                        <a class="close" href="#popup1">×</a>
+                        <div class="contents" >
+                           <b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Your Register Successfully <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Now you can Login!!</p></b>
+                        </div>
+                    </div>
+                </div>
+
+                {% endif %}  
+            </form>          
+
+   <script>
+    var x=  document.getElementById("reg")
+    var y=  document.getElementById("log")
+    var z=  document.getElementById("btns")
+
+    function log(){
+        x.style.left="-400px";
+        y.style.left="20px";
+        z.style.left="110px";
+    }
+    function reg(){
+        x.style.left="18px";
+        y.style.left="450px";
+        z.style.left="0px";
+    }
+    </script>
+</body>
+</html>
